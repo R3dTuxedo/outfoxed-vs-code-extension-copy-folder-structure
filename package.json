@@ -2,7 +2,7 @@
   "name": "outfoxed-copy-folder-structure",
   "displayName": "OutFoxed Copy Folder Structure",
   "description": "Right-click any folder in VS Code to copy its folder structure to the clipboard. Supports files, folders, max depth, ignored files, and source path options.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.109.0"
@@ -10,6 +10,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/R3dTuxedo/outfoxed-vs-code-extension-copy-folder-structure.git"
+  },
+  "homepage": "https://github.com/R3dTuxedo/outfoxed-vs-code-extension-copy-folder-structure",
+  "bugs": {
+    "url": "https://github.com/R3dTuxedo/outfoxed-vs-code-extension-copy-folder-structure/issues"
   },
   "publisher": "OutFoxed",
   "pricing": "Free",

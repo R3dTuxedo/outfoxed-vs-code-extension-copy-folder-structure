@@ -106,3 +106,6 @@ Initial release with:
 - Copy Folder Structure
 - Copy Folder Structure (Folders Only)
 - Max depth, ignore list, source path options
+
+### 1.0.1
+- Added homepage and bug tracker links

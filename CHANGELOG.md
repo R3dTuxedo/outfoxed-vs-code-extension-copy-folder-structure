@@ -7,3 +7,6 @@ All notable changes to the OutFoxed Copy Folder Structure extension will be docu
 - Copy Folder Structure
 - Copy Folder Structure (Folders Only)
 - Settings: max depth, ignore list, source path (none, absolute, relative)
+
+## [1.0.1] - 2026-03-05
+- Added homepage and bug tracker links to package.json
