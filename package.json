@@ -1,0 +1,106 @@
+{
+  "name": "outfoxed-copy-folder-structure",
+  "displayName": "OutFoxed Copy Folder Structure",
+  "description": "Right-click any folder in VS Code to copy its folder structure to the clipboard. Supports files, folders, max depth, ignored files, and source path options.",
+  "version": "1.0.0",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/R3dTuxedo/outfoxed-vs-code-extension-copy-folder-structure.git"
+  },
+  "publisher": "OutFoxed",
+  "pricing": "Free",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "folder",
+    "structure",
+    "tree",
+    "copy",
+    "filesystem",
+    "developer",
+    "ai"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "outfoxed-copy-folder-structure.copyStructure",
+        "title": "Copy Folder Structure"
+      },
+      {
+        "command": "outfoxed-copy-folder-structure.copyFoldersOnly",
+        "title": "Copy Folder Structure (Folders Only)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "outfoxed-copy-folder-structure.copyStructure",
+          "when": "explorerResourceIsFolder",
+          "group": "2_clipboard"
+        },
+        {
+          "command": "outfoxed-copy-folder-structure.copyFoldersOnly",
+          "when": "explorerResourceIsFolder",
+          "group": "2_clipboard@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "OutFoxed Copy Folder Structure",
+      "properties": {
+        "outfoxed.copyFolderStructure.search.maxDepth": {
+          "type": "number",
+          "default": 10,
+          "description": "Maximum folder depth to scan."
+        },
+        "outfoxed.copyFolderStructure.search.ignore": {
+          "type": "array",
+          "default": [
+            "node_modules",
+            ".git",
+            "dist",
+            "build",
+            ".vscode",
+            ".vscode-test",
+            "coverage",
+            ".cache",
+            ".next",
+            ".idea",
+            "Thumbs.db",
+            ".DS_Store",
+            "desktop.ini"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Files or folders to ignore."
+        },
+        "outfoxed.copyFolderStructure.result.includeSourcePath": {
+          "type": "string",
+          "enum": [
+            "none",
+            "absolute",
+            "relative"
+          ],
+          "default": "none",
+          "description": "Include the folder path in the output: none, absolute path, or relative to project."
+        }
+      }
+    }
+  },
+  "scripts": {},
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.109.0",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
