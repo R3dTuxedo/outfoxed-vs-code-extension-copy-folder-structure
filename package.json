@@ -2,7 +2,7 @@
   "name": "outfoxed-copy-folder-structure",
   "displayName": "OutFoxed Copy Folder Structure",
   "description": "Right-click any folder in VS Code to copy its folder structure to the clipboard. Supports files, folders, max depth, ignored files, and source path options.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.109.0"
@@ -41,6 +41,10 @@
       {
         "command": "outfoxed-copy-folder-structure.copyFoldersOnly",
         "title": "Copy Folder Structure (Folders Only)"
+      },
+      {
+        "command": "outfoxed-copy-folder-structure.copyWithContext",
+        "title": "Copy Folder Structure (With Context)"
       }
     ],
     "menus": {
@@ -54,6 +58,11 @@
           "command": "outfoxed-copy-folder-structure.copyFoldersOnly",
           "when": "explorerResourceIsFolder",
           "group": "2_clipboard@2"
+        },
+        {
+            "command": "outfoxed-copy-folder-structure.copyWithContext",
+            "when": "filesExplorerFocus",
+            "group": "2_clipboard@3"
         }
       ]
     },
@@ -96,6 +105,55 @@
           ],
           "default": "none",
           "description": "Include the folder path in the output: none, absolute path, or relative to project."
+        },
+        "outfoxed.copyFolderStructure.context.enabledExtensions": {
+          "type": "array",
+          "default": [
+              "js",
+              "mjs",
+              "ts",
+              "jsx",
+              "tsx",
+              "lua",
+              "luau",
+              "json",
+              "jsonc",
+              "md",
+              "txt",
+              "html",
+              "css",
+              "scss",
+              "xml",
+              "yaml",
+              "yml",
+              "toml",
+              "ini",
+              "py",
+              "cs",
+              "cpp",
+              "c",
+              "h",
+              "hpp",
+              "java",
+              "kt",
+              "go",
+              "rs",
+              "php",
+              "rb",
+              "sql",
+              "sh",
+              "ps1",
+              "bat"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "File extensions included when copying project context."
+        },
+        "outfoxed.copyFolderStructure.context.maxCharactersPerFile": {
+            "type": "number",
+            "default": 10000,
+          "description": "Maximum characters from each file before being truncated."
         }
       }
     }
